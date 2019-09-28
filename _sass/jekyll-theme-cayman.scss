@@ -1,25 +1,9 @@
 @import "normalize";
 @import "rouge-github";
 @import "variables";
+@import "mixins";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
-@mixin large {
-  @media screen and (min-width: #{$large-breakpoint}) {
-    @content;
-  }
-}
-
-@mixin medium {
-  @media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint}) {
-    @content;
-  }
-}
-
-@mixin small {
-  @media screen and (max-width: #{$medium-breakpoint}) {
-    @content;
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -105,7 +89,7 @@ a {
   }
 }
 
-.page-header {
+.page-block-cayman {
   color: $header-heading-color;
   text-align: center;
   background-color: $header-bg-color;
@@ -144,7 +128,6 @@ a {
 .project-tagline {
   margin-bottom: 2rem;
   font-weight: normal;
-  opacity: 0.7;
 
   @include large {
     font-size: 1.25rem;

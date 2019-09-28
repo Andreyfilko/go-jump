@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: go-jump
 ---
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.

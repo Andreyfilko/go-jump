@@ -1,0 +1,95 @@
+@import "normalize";
+@import "rouge-github";
+@import "variables";
+@import "mixins";
+@import "fontawesome/fontawesome";
+@import "fontawesome/brands";
+
+.container {
+  margin: auto;
+  
+  @include large {
+    max-width: $large-breakpoint;
+  }
+  
+  @include medium {
+    max-width: $medium-breakpoint;
+  }
+  
+  @include small {
+  
+  }
+}
+
+.page-header {
+  color: $header-heading-color;
+  text-align: center;
+  background-color: $dark-red;
+  font-size: 1.1rem;
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: normal;
+    font-family: 'Teko', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2 {
+    position: relative;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    top: -.2rem;
+  }
+  
+  .contact {
+    padding-top: .5rem;
+    .phone {
+      color: yellow;
+      font-size: 1.2rem;
+    }
+  }
+  
+  .social {
+    display: flex;
+    
+    a {
+      color: white;
+      text-decoration: none;
+      font-size: .8rem;
+      
+      margin: .5rem 1rem;
+      
+      i {
+        color: #400010;
+        background-color: white;
+        display: block;
+        border-radius: 2rem;
+        width: 2.1rem;
+        height: 2.1rem;
+        font-size: 1.6rem;
+        padding-top: 0.25rem;
+        margin: .3rem auto;
+      }
+    }
+  }
+  
+  @include large {
+    padding: 1rem 0 .5rem;
+  }
+  
+  @include medium {
+    padding: 3rem 4rem;
+  }
+  
+  @include small {
+    padding: 2rem 1rem;
+  }
+}
