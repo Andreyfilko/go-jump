@@ -93,3 +93,128 @@
     padding: 2rem 1rem;
   }
 }
+
+
+main.countdown {
+  background: url(../img/main-bg.jpg) 50% 0 no-repeat;
+  background-size: cover;
+  padding-bottom: 5.4rem;
+  position: relative;
+  padding-top: 1rem;
+  z-index: 5;
+  min-height: 20rem;
+  text-align: center;
+  color: white;
+  
+  .container {
+    position: relative;
+    z-index: 3;
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+  
+  h1 {
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+  }
+  
+  h2 {
+    font-size: 1.1rem;
+    font-weight: normal;
+  }
+  
+  .row {
+    display: flex;
+    
+    & > * {
+      flex-grow: 1;
+      width: 50%;
+    }
+  
+    .countdown {
+      padding-top: 12.5rem;
+      
+      .title {
+        font-size: 1.2rem;
+        line-height: 1.1;
+        font-weight: bold;
+      }
+  
+      #clock {
+        transform: scale(.7);
+        margin: 0;
+  
+        .flip-clock-label {
+          top: 6.5rem;
+          color: #fff;
+          font-size: 1.34rem;
+        }
+  
+        .inn {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+      
+      .schedule {
+        margin-top: 1rem;
+        
+        .title {
+          font-weight: bold;
+          font-size: 1.8rem;
+        }
+        
+        ul {
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          
+          li {
+            flex-basis: 25%;
+            position: relative;
+            margin-bottom: 1rem;
+            
+           .date {
+             line-height: 1.1;
+             user-select: none;
+             width: 5.625rem;
+             height: 6rem;
+             position: relative;
+             font-family: 'Teko', sans-serif;
+             font-size: 3.7rem;
+             padding-top: 20px;
+             background: url(../img/calendar.svg) no-repeat;
+             background-size: contain;
+             
+             & > * {
+               display: block;
+             }
+             
+             .month {
+               font-size: .9rem;
+               font-weight: bold;
+               color: #a9e223;
+               position: relative;
+               bottom: 12px;
+             }
+           }
+          }
+        }
+      }
+    }
+  }
+  
+
+}

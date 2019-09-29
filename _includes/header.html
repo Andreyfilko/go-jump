@@ -1,0 +1,19 @@
+<header class="page-header" role="banner">
+    <div class="container">
+        <div>
+            <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+            <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+        </div>
+
+        <div class="contact">
+            <div>{{ page.summary | default: site.summary }}</div>
+            <div class="phone">{{ site.phone }}</div>
+        </div>
+
+        <div class="social">
+            <a href="https://www.instagram.com/ropejumping.kiev/" target="_blank">Instagram <i class="fab fa-instagram"></i>
+            </a>
+            <a href="http://www.facebook.com/go.jump.com.ua" target="_blank">Facebook <i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+</header>
