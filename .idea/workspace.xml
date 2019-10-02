@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be629529-b9de-4e25-9ae9-58fb40469953" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/_includes/advantage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910" beforeDir="false" afterPath="$PROJECT_DIR$/.jekyll-cache/Jekyll/Cache/Jekyll--Cache/b7/9606fb3afea5bd1609ed40b622142f1c98125abcfe89a76a661b0e8e343910" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_includes/countdown.html" beforeDir="false" afterPath="$PROJECT_DIR$/_includes/countdown.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_layouts/go-jump.html" beforeDir="false" afterPath="$PROJECT_DIR$/_layouts/go-jump.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_sass/go-jump.scss" beforeDir="false" afterPath="$PROJECT_DIR$/_sass/go-jump.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +64,7 @@
       <option name="presentableId" value="Default" />
       <updated>1569658856688</updated>
       <workItem from="1569658857825" duration="23059000" />
-      <workItem from="1569957709030" duration="6499000" />
+      <workItem from="1569957709030" duration="10620000" />
     </task>
     <task id="LOCAL-00001" summary="Header layout">
       <created>1569710734258</created>
@@ -94,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569959317476</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Form layout">
+      <created>1569964435759</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1569964435759</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,6 +127,7 @@
     <MESSAGE value="Countdown layout" />
     <MESSAGE value="URL path fixed" />
     <MESSAGE value="Calendar updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Calendar updated" />
+    <MESSAGE value="Form layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Form layout" />
   </component>
 </project>
