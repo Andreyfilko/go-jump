@@ -140,6 +140,63 @@ section.advantage {
   }
 }
 
+ul.schedule {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+
+  &.inline {
+    align-content: space-between;
+
+    li {
+      flex: 1;
+    }
+  }
+
+  &.dark {
+    li .date {
+      background: url(../img/calendar_dark.svg) no-repeat;
+      .day {
+        color: #508c00;
+      }
+      .month {
+        color: #555;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    margin-bottom: 1rem;
+
+    .date {
+      margin: auto;
+      line-height: 1.1;
+      user-select: none;
+      width: 5.625rem;
+      height: 6rem;
+      position: relative;
+      font-family: 'Teko', sans-serif;
+      font-size: 3.7rem;
+      padding-top: 20px;
+      background: url(../img/calendar.svg) no-repeat;
+      background-size: contain;
+
+      & > * {
+        display: block;
+      }
+
+      .month {
+        font-size: .9rem;
+        font-weight: bold;
+        color: #a9e223;
+        position: relative;
+        bottom: 12px;
+      }
+    }
+  }
+}
 
 main.countdown {
   background: url(../img/main-bg.jpg) 50% 0 no-repeat;
@@ -206,40 +263,16 @@ main.countdown {
           font-size: 1.8rem;
         }
         
-        ul {
-          list-style: none;
-          display: flex;
-          flex-wrap: wrap;
-          
-          li {
-            flex-basis: 25%;
-            position: relative;
-            margin-bottom: 1rem;
-            
-           .date {
-             line-height: 1.1;
-             user-select: none;
-             width: 5.625rem;
-             height: 6rem;
-             position: relative;
-             font-family: 'Teko', sans-serif;
-             font-size: 3.7rem;
-             padding-top: 20px;
-             background: url(../img/calendar.svg) no-repeat;
-             background-size: contain;
-             
-             & > * {
-               display: block;
-             }
-             
-             .month {
-               font-size: .9rem;
-               font-weight: bold;
-               color: #a9e223;
-               position: relative;
-               bottom: 12px;
-             }
-           }
+        ul.schedule li {
+          flex-basis: 25%;
+          margin-bottom: 1rem;
+
+          .date {
+            margin: 0;
+
+            .month {
+              color: #a9e223;
+            }
           }
         }
       }
@@ -450,5 +483,26 @@ section.offer {
         width: 100%;
       }
     }
+  }
+}
+
+section.schedule {
+  ul.schedule {
+    li {
+      flex-basis: auto;
+    }
+  }
+}
+
+#content {
+  > .title {
+    font-size: 2.3rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: lighter;
+  }
+
+  ul.schedule {
+    margin-top: 1rem;
   }
 }

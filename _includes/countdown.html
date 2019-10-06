@@ -11,32 +11,7 @@
             <div id="clock"></div>
             <div class="schedule">
                 <div class="title">Ближайшие даты прыжков:</div>
-                <ul>
-                    {% for day in site.dates %}
-                    <li>
-                        <div class="date">
-                            <span class="day">{{ day | date: "%e" }}</span>
-                            <span class="month">
-                                {% assign m = day | date: "%-m" %}
-                                {% case m %}
-                                  {% when '1' %}января
-                                  {% when '2' %}февраля
-                                  {% when '3' %}марта
-                                  {% when '4' %}апреля
-                                  {% when '5' %}мая
-                                  {% when '6' %}июня
-                                  {% when '7' %}июля
-                                  {% when '8' %}августа
-                                  {% when '9' %}сентября
-                                  {% when '10' %}октября
-                                  {% when '11' %}ноября
-                                  {% when '12' %}декабря
-                                {% endcase %}
-                            </span>
-                        </div>
-                    </li>
-                    {% endfor %}
-                </ul>
+                {% include schedule.html %}
             </div>
         </div>
         <div class="form">
