@@ -21,6 +21,33 @@
   }
 }
 
+.btn {
+  &.green {
+    background-color: rgba(91, 160, 0, 0.85);
+    border-color: rgba(114, 134, 23, 0.18);
+    color: white;
+
+    &:hover {
+      background-color: rgba(91, 160, 0, 1);
+      border-color: rgba(114, 134, 23, 0.18);
+      color: white;
+    }
+  }
+
+  &.red {
+    background-color: rgba(113, 0, 0, 0.75);
+
+    border-color: maroon;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.8);
+
+    &:hover {
+      background-color: rgba(140, 0, 0, 0.75);
+      color: rgba(255, 255, 255, 0.88);
+    }
+  }
+}
+
 .page-header {
   color: $header-heading-color;
   text-align: center;
@@ -352,5 +379,76 @@ section.advantage {
 
   &:after {
     background: rgba(0, 0, 0, 0.15);
+  }
+}
+
+section.offer {
+  text-align:  center;
+
+  > .title {
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: bold;
+    color: black;
+  }
+
+  ul.table {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+
+    > li {
+      flex-basis: 50%;
+      font-size: .95rem;
+
+      .title {
+        color: #0099ff;
+        margin-bottom: 1rem;
+
+        div {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+
+      .description {
+        font-size: .9rem;
+        margin-top: .5rem;
+
+        p {
+          padding: 0;
+          margin: .1rem;
+        }
+
+        b {
+          color: black;
+        }
+
+        .head {
+          font-weight: bold;
+          color: black;
+          font-size: .95rem;
+          margin-bottom: .2rem;
+        }
+
+        .price {
+          color: black;
+          font-weight: bold;
+
+          b {
+            font-size: 1.5rem;
+          }
+        }
+      }
+
+      button {
+        font-size: 1rem;
+        margin-top: 1rem;
+        max-width: 300px;
+        width: 100%;
+      }
+    }
   }
 }
