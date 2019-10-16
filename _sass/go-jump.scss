@@ -415,6 +415,19 @@ section.advantage {
   }
 }
 
+ul.table {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+
+  li {
+    flex-basis: 50%;
+  }
+}
+
 section.offer {
   text-align:  center;
 
@@ -426,12 +439,6 @@ section.offer {
   }
 
   ul.table {
-    list-style: none;
-    margin: 2rem 0 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-
     > li {
       flex-basis: 50%;
       font-size: .95rem;
@@ -504,5 +511,52 @@ section.schedule {
 
   ul.schedule {
     margin-top: 1rem;
+  }
+}
+
+section.gifts {
+  margin-top: 4rem;
+
+  .gift {
+    .title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #800080;
+    }
+    .description {
+      font-size: 0.9rem;
+      text-align: left;
+
+      .price {
+        font-size: 1.2rem;
+        color: #444;
+      }
+
+      .warn {
+        color: red;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .certificate {
+    .title {
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin: .3rem 0 1rem;
+      color: #444;
+    }
+
+    .hint {
+      font-size: .9rem;
+      margin: .5rem 0 3rem;
+    }
+
+    .btn {
+      font-weight: normal;
+      width: 80%;
+      margin: .5rem 0;
+    }
   }
 }
