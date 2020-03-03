@@ -54,6 +54,11 @@
 
 .social {
   display: flex;
+  justify-content: flex-end;
+
+  @include small {
+    justify-content: center;
+  }
 
   a {
     color: white;
@@ -86,6 +91,13 @@
   .container {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+
+    @include small {
+      > * + * {
+        margin-top: .5rem;
+      }
+    }
   }
   
   h1 {
@@ -107,9 +119,14 @@
   
   .contact {
     padding-top: .5rem;
+
     .phone {
       color: yellow;
       font-size: 1.2rem;
+
+      @include small {
+        margin-top: 1rem;
+      }
     }
   }
   
@@ -122,7 +139,7 @@
   }
   
   @include small {
-    padding: 2rem 1rem;
+    padding: 2rem 0 1rem;
   }
 }
 
@@ -150,12 +167,15 @@ ul.schedule {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  padding: 0;
 
   &.inline {
     align-content: space-between;
 
     li {
       flex: 1;
+      max-width: 25%;
+      margin: 0 auto 1rem;
     }
   }
 
@@ -180,6 +200,7 @@ ul.schedule {
       line-height: 1.1;
       user-select: none;
       width: 5.625rem;
+      max-width: 98%;
       height: 6rem;
       position: relative;
       font-family: 'Teko', sans-serif;
@@ -187,6 +208,11 @@ ul.schedule {
       padding-top: 20px;
       background: url(../img/calendar.svg) no-repeat;
       background-size: contain;
+
+      @include small {
+        line-height: 1.2;
+        font-size: 3.2rem;
+      }
 
       & > * {
         display: block;
@@ -206,9 +232,8 @@ ul.schedule {
 main.countdown {
   background: url(../img/main-bg.jpg) 50% 0 no-repeat;
   background-size: cover;
-  padding-bottom: 1rem;
   position: relative;
-  padding-top: 1rem;
+  padding: 1rem .5rem;
   z-index: 5;
   min-height: 20rem;
   text-align: center;
@@ -220,6 +245,10 @@ main.countdown {
     font-weight: 700;
     margin: 0;
     line-height: 1;
+
+    @include small {
+      font-size: 3rem;
+    }
   }
   
   h2 {
@@ -229,14 +258,25 @@ main.countdown {
   
   & > .row {
     display: flex;
+    flex-wrap: wrap;
     
     & > * {
       flex-grow: 1;
       width: 50%;
+
+      @include small {
+        width: 100%;
+      }
     }
   
     .countdown {
       padding-top: 12.5rem;
+      display: flex;
+      flex-direction: column;
+
+      @include small {
+        padding-top: 3rem;
+      }
       
       .title {
         font-size: 1.2rem;
@@ -245,8 +285,10 @@ main.countdown {
       }
   
       #clock {
-        transform: scale(.7);
-        margin: 0;
+        width: 460px;
+        transform: scale(0.7);
+        margin: 1rem 0;
+        align-self: center;
   
         .flip-clock-label {
           top: 6.5rem;
@@ -268,15 +310,16 @@ main.countdown {
           font-size: 1.8rem;
         }
         
-        ul.schedule li {
-          flex-basis: 25%;
-          margin-bottom: 1rem;
+        ul.schedule {
+          li {
+            flex-basis: 25%;
+            max-width: 25%;
+            margin: 0 auto 1rem;
 
-          .date {
-            margin: 0;
-
-            .month {
-              color: #a9e223;
+            .date {
+              .month {
+                color: #a9e223;
+              }
             }
           }
         }
@@ -378,8 +421,11 @@ section.advantage {
   color: #fff;
   z-index: 5;
   min-height: 25rem;
-
   text-align: center;
+
+  @include small {
+    display: none;
+  }
 
   & > .container {
     position: relative;
@@ -425,11 +471,12 @@ ul.table {
   margin: 2rem 0 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   text-align: center;
 
   li {
-    flex-basis: 50%;
+    flex: 1;
   }
 }
 
@@ -441,12 +488,17 @@ section.offer {
     font-style: italic;
     font-weight: bold;
     color: black;
+
+    @include small {
+      font-size: 2rem;
+    }
   }
 
   ul.table {
     > li {
       flex-basis: 50%;
       font-size: .95rem;
+      margin-top: 1rem;
 
       .title {
         color: #0099ff;
@@ -490,7 +542,7 @@ section.offer {
 
       button {
         font-size: 1rem;
-        margin-top: 1rem;
+        margin: 1rem auto;
         max-width: 300px;
         width: 100%;
       }
@@ -512,6 +564,10 @@ section.schedule {
     margin-top: 2rem;
     text-align: center;
     font-weight: lighter;
+
+    @include small {
+      font-size: 2rem;
+    }
   }
 
   ul.schedule {
@@ -523,6 +579,8 @@ section.gifts {
   margin-top: 4rem;
 
   .gift {
+    margin-bottom: 1rem;
+
     .title {
       font-size: 1.8rem;
       font-weight: bold;
@@ -531,6 +589,10 @@ section.gifts {
     .description {
       font-size: 0.9rem;
       text-align: left;
+
+      @include small {
+        text-align: center;
+      }
 
       .price {
         font-size: 1.2rem;
@@ -560,8 +622,9 @@ section.gifts {
 
     .btn {
       font-weight: normal;
+      min-width: 20rem;
       width: 80%;
-      margin: .5rem 0;
+      margin: .5rem auto;
     }
   }
 }
@@ -569,7 +632,7 @@ section.gifts {
 
 .scheme {
   background-color: #f5f5f5;
-  padding: 1rem 0 3rem;
+  padding: 1rem 0 1rem;
 
   .container > .title {
     font-size: 2.5rem;
@@ -580,14 +643,24 @@ section.gifts {
 
   ol {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     margin-top: 2rem !important;
+    justify-content: space-between;
 
     li {
       color: black;
       font-size: 1.27rem;
+      flex-basis: 25%;
+      margin-bottom: 1.5rem;
 
-      & + li {
-        margin-left: 4rem;
+      @include small {
+        min-width: 100%;
+        text-align: center;
+      }
+
+      > * {
+        margin-right: 2rem;
       }
 
       img {
@@ -604,6 +677,14 @@ section.gifts {
   background-color: $dark-red;
   min-height: 10rem;
 
+  .container {
+    margin-bottom: 1rem;
+
+    iframe {
+      margin-bottom: 1rem;
+    }
+  }
+
   .h1 {
     color: white;
     text-transform: uppercase;
@@ -613,10 +694,17 @@ section.gifts {
 
   .place, .contacts {
     display: flex;
-    margin: 2rem 0;
+    flex-wrap: wrap;
+    margin: 0 .5rem;
 
     > * {
-      flex-basis: 50%;
+      flex: 1;
+      margin-top: 1rem;
+
+      @include small {
+        min-width: 100%;
+        text-align: center;
+      }
     }
 
     .name {
@@ -628,9 +716,8 @@ section.gifts {
       text-align: right;
     }
 
-    .social {
-      display: flex;
-
+    .phone {
+      color: white;
     }
   }
 }

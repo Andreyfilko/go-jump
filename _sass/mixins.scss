@@ -7,13 +7,13 @@
 }
 
 @mixin medium {
-  @media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint}) {
+  @media screen and (max-width: #{$large-breakpoint - 2px}) {
 	@content;
   }
 }
 
 @mixin small {
-  @media screen and (max-width: #{$medium-breakpoint}) {
+  @media screen and (max-width: #{$medium-breakpoint - 2px}) {
 	@content;
   }
 }
