@@ -1,19 +1,25 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js"><\/script>')</script>
 <script src="assets/js/flipclock.min.js"></script>
+<script src="assets/js/jquery.validate.min.js"></script>
+<script type="text/javascript">
+    const botToken = '{{ site.telegram_bot_token }}';
+    const chat_id = '{{ site.telegram_chatId }}';
+</script>
+<script src="assets/js/site.js"></script>
+
 
 
 <script type="text/javascript">
     Data = new Date();
-    var time = 86400 - (Data.getHours()*3600 + Data.getMinutes()*60 + Data.getSeconds());
-    console.log(time);
+    var time = 86400 - (Data.getHours() * 3600 + Data.getMinutes() * 60 + Data.getSeconds());
     var clock;
     clock = new FlipClock($('#clock'), time, {
         clockFace: 'HourlyCounter', //вид счетчика (с количеством дней)
-        autoStart: true,          //Отключаем автозапуск
-        countdown: true	,           //Отсчет назад
-        language:'ru-ru',           //Локаль языка
-        callbacks: {               //Действие после окончания отсчета
+        autoStart: true,            //Отключаем автозапуск
+        countdown: true,            //Отсчет назад
+        language: 'ru-ru',           //Локаль языка
+        callbacks: {                //Действие после окончания отсчета
             stop: function() {
                 clock.setTime(86400);
                 clock.setCountdown(true);

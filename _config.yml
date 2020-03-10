@@ -3,6 +3,10 @@ description: Прыжки с веревкой. Киев
 summary: Регулярно прыгаем ст.м. Почтовая - "Парковый мост"
 phone: ‎+38 (096) 388-22-08
 
+# Telegram config
+telegram_chatId: 353354751
+telegram_bot_token: 504165900:AAEsAn1mGxE0NicnX-XbvrrnSBGoCXzF77M
+
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-cayman

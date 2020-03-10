@@ -52,6 +52,24 @@
   }
 }
 
+form {
+  label.error {
+    color: maroon;
+    font-size: .9rem;
+    margin-top: .2rem;
+  }
+
+  input.error {
+    border: 1px solid maroon !important;
+    background-color: rgba(140, 0, 0, 0.5); ;
+    color: white;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
 .social {
   display: flex;
   justify-content: flex-end;
@@ -362,7 +380,7 @@ main.countdown {
             margin-bottom: .3rem;
           }
 
-          &.application {
+          &.green {
             margin-top: 1.5rem;
 
             button {
@@ -378,7 +396,7 @@ main.countdown {
             }
           }
 
-          &.booking {
+          &.red {
             margin-top: 1.1rem;
             button {
               background-color: rgba(113, 0, 0, 0.75);
