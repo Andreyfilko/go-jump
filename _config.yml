@@ -3,9 +3,32 @@ description: Прыжки с веревкой. Киев
 summary: Регулярно прыгаем ст.м. Почтовая - "Парковый мост"
 phone: ‎+38 (096) 388-22-08
 
+# Certificate expire date
+cert_expire_date: 2020-11-10
+
+#Prices
+payment:
+  jump_classic:
+    enabled: true
+    amount: 250
+    description: Бронирование классического прыжка
+  jump_tandem:
+    enabled: true
+    amount: 550
+    description: Бронирование тандем прыжка
+  cert_classic:
+    enabled: true
+    amount: 300
+    description: Сертификат на классический прыжок
+  cert_tandem:
+    enabled: true
+    amount: 600
+    description: Сертификат на тандем прыжок
+
 # Telegram config
-telegram_chatId: 353354751
-telegram_bot_token: 504165900:AAEsAn1mGxE0NicnX-XbvrrnSBGoCXzF77M
+#telegram_chatId: 492010472
+telegram_chatId: 353354751 # filko
+telegram_bot_token: 983495413:AAECuNOKh00LLeaCxpzHIxzBEW0JL1upSFU
 
 show_downloads: true
 google_analytics:

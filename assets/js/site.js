@@ -1,27 +1,3 @@
-/*
- * Translated default messages for the jQuery validation plugin.
- * Locale: RU (Russian; русский язык)
- */
-$.extend( $.validator.messages, {
-    required: "Это поле необходимо заполнить.",
-    remote: "Пожалуйста, введите правильное значение.",
-    email: "Пожалуйста, введите корректный адрес электронной почты.",
-    url: "Пожалуйста, введите корректный URL.",
-    date: "Пожалуйста, введите корректную дату.",
-    dateISO: "Пожалуйста, введите корректную дату в формате ISO.",
-    number: "Пожалуйста, введите число.",
-    digits: "Пожалуйста, вводите только цифры.",
-    creditcard: "Пожалуйста, введите правильный номер кредитной карты.",
-    equalTo: "Пожалуйста, введите такое же значение ещё раз.",
-    extension: "Пожалуйста, выберите файл с правильным расширением.",
-    maxlength: $.validator.format( "Пожалуйста, введите не больше {0} символов." ),
-    minlength: $.validator.format( "Пожалуйста, введите не меньше {0} символов." ),
-    rangelength: $.validator.format( "Пожалуйста, введите значение длиной от {0} до {1} символов." ),
-    range: $.validator.format( "Пожалуйста, введите число от {0} до {1}." ),
-    max: $.validator.format( "Пожалуйста, введите число, меньшее или равное {0}." ),
-    min: $.validator.format( "Пожалуйста, введите число, большее или равное {0}." )
-} );
-
 function serializeToObject(form) {
     let result = {};
     const data = $(form).serializeArray();
@@ -31,28 +7,37 @@ function serializeToObject(form) {
     return result;
 }
 
-function getFormattedMessage({user_name, phone_number, user_count, message}) {
+function getFormattedMessage({user_name, phone_number, user_count, message}, form_name = 'Имя Формы') {
     return `
+<pre>${form_name}</pre>
+
 <b>Имя пользователя:</b> ${user_name || 'Не указано'}
 <b>Телефон:</b> ${phone_number}
 <b>Количество людей:</b> ${user_count}
 <b>Комментарий:</b> ${message || '-'}`;
 }
 
-$("#bookingForm").validate({
-    rules: {
-        phone_number: {
-            required: true,
-            digits: true,
-            minlength: 7
-        }
-    },
-    submitHandler: function(form) {
-        $.get( `https://api.telegram.org/bot${botToken}/sendMessage`, {
-            chat_id,
-            text: getFormattedMessage(serializeToObject(form)),
-            parse_mode: 'HTML'
-        }, function( data ) {
+function telegramSend(form, order_id) {
+    let name = $(form).attr('name');
+
+    if(order_id) {
+        name += `\r\nЗаказ: ${order_id}`;
+    }
+
+    return $.get( `https://api.telegram.org/bot${botToken}/sendMessage`, {
+        chat_id,
+        text: getFormattedMessage(serializeToObject(form), name),
+        parse_mode: 'HTML'
+    });
+}
+
+function processBookForm(form) {
+    const formData = serializeToObject(form);
+
+    if(formData.pay_type) {
+        processPayment(formData, form)
+    } else {
+        telegramSend(form).done(data => {
             if(data.ok) {
                 // show popup
                 alert('Ваша заявка приятна и будет обработана в ближайшее время.\nМы с вами свяжемся.');
@@ -62,4 +47,67 @@ $("#bookingForm").validate({
             }
         });
     }
+}
+
+
+function processPayment(formData, form) {
+    const paymentData = payment[formData.pay_type];
+    paymentData.amount = getCountAmount(formData);
+
+    $.get( `https://filko.dev/go-jump/`, paymentData).done(paymentFormData => {
+
+        if(confirm(`Для безопасной оплаты вы будете переадресованы на сервис liqpay.ua\rНомер Вашего заказа: ${paymentFormData.order_id}`)) {
+
+            telegramSend(form, paymentFormData.order_id).done(data => {
+                if(data.ok) {
+                    $(getHtmlPayForm(paymentFormData)).appendTo('body').submit();
+                } else {
+                    alert('Произошла ошибка.');
+                }
+            });
+        }
+    });
+}
+
+function getCountAmount(formData) {
+    const user_count = parseInt(formData.user_count, 10);
+    const price = payment[formData.pay_type].amount;
+
+    if(!user_count) {
+        return price;
+    }
+
+    if(formData.pay_type.includes('tandem')) {
+        return price * ((user_count + user_count%2) / 2);
+    }
+
+    return price * user_count;
+}
+
+function getHtmlPayForm(formData) {
+    return `
+            <form method="POST" action="${formData.url}" accept-charset="utf-8">
+                <input type="hidden" name="data" value="${formData.data}" />
+                <input type="hidden" name="signature" value="${formData.signature}" />
+            </form>
+            `;
+}
+
+$(function () {
+// Modal open button
+    $('[data-modal]').click(function (button) {
+        const modalId = '#modal_' + $(this).data('modal');
+        $(modalId).show();
+    });
+
+    // Modal close button
+    $('.modal .close').click(function () {
+        $(this).closest('.modal').hide();
+    });
+
+    $('.modal').click(function (event) {
+        if(!$(event.target).closest(".modal-content").length) {
+            $(this).hide();
+        }
+    });
 });

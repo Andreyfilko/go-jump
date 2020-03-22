@@ -1,0 +1,55 @@
+<form class="book" autocomplete="off" id="{{ include.id }}" name="{{ include.form_name }}">
+    <div class="title">{{ include.form_name }}</div>
+    <div class="description">*Ваши данные не будут переданы третьим лицам.</div>
+
+    <label class="row">
+        <span class="name">Фамилия Имя:</span>
+        <input name="user_name" placeholder="Ваше имя" type="text">
+    </label>
+    <label class="row">
+        <span class="name">Количество человек:</span>
+        <select name="user_count">
+            {% for i in (1..8) %}
+            {% assign value = i | modulo:2 %}
+                {% if include.pay_type == null or include.pay_type contains "classic" or include.pay_type contains "tandem" and value == 0 %}
+                <option>{{ i }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </label>
+    <label class="row">
+        <span class="name">Телефон: *</span>
+        <input name="phone_number" placeholder="0675554433" autocomplete="off" type="text">
+    </label>
+    <label class="row">
+        <span class="name">Комментарий (дата прыжка, или детали бронировки) :</span>
+        <input type="text" name="message">
+    </label>
+    <div class="row red">
+        <button type="submit" name="request" class="btn">Оставить заявку</button>
+    </div>
+
+    {% if site.payment[include.pay_type].enabled %}
+    <div class="row green">
+        <button type="submit" name="pay_type" value="{{include.pay_type}}" class="btn">Оплатить онлайн</button>
+    </div>
+    {% endif %}
+
+</form>
+
+<script type="text/javascript">
+$(function () {
+    const formId = '#{{ include.id }}';
+
+    $(formId).validate({
+        rules: {
+            phone_number: {
+                required: true,
+                digits: true,
+                minlength: 7
+            }
+        },
+        submitHandler: processBookForm
+    });
+})
+</script>

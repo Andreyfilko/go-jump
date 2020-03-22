@@ -11,7 +11,9 @@
         gtag('config', '{{ site.google_analytics }}');
       </script>
     {% endif %}
-    <meta charset="UTF-8">
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.3.1.min.js"><\/script>')</script>
+      <meta charset="UTF-8">
 
 {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -44,5 +46,49 @@
     {% include map.html %}
 
     {% include scripts.html %}
+
+    <!-- Form modal_jump_classic -->
+    {% capture modal_jump_classic %}
+        {% include form_book.html
+            form_name="Бронирование классического прыжка"
+            pay_type='jump_classic'
+            id="bookingFormModalClassic"
+        %}
+    {% endcapture %}
+
+    {% include modal.html content=modal_jump_classic width='28rem' id="bookingFormModalClassic" %}
+
+    <!-- Form modal_jump_tandem -->
+    {% capture modal_jump_tandem %}
+        {% include form_book.html
+            form_name="Бронирование тандем прыжка"
+            pay_type='modal_jump_tandem'
+            id="bookingFormModalTandem"
+        %}
+    {% endcapture %}
+
+    {% include modal.html content=modal_jump_tandem width='28rem' id="bookingFormModalTandem" %}
+
+    <!-- Form modal_cert_classic -->
+    {% capture modal_cert_classic %}
+    {% include form_book.html
+    form_name="Заказ сертификата на классический прыжок"
+    pay_type='cert_classic'
+    id="certFormModalClassic"
+    %}
+    {% endcapture %}
+
+    {% include modal.html content=modal_cert_classic width='28rem' id="certFormModalClassic" %}
+
+    <!-- Form modal_cert_tandem -->
+    {% capture modal_cert_tandem %}
+    {% include form_book.html
+    form_name="Заказ сертификата на тандем прыжок"
+    pay_type='modal_cert_tandem'
+    id="certFormModalTandem"
+    %}
+    {% endcapture %}
+
+    {% include modal.html content=modal_cert_tandem width='28rem' id="certFormModalTandem" %}
   </body>
 </html>

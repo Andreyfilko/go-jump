@@ -6,9 +6,9 @@
             <div class="description">
                 <b>В наличии есть подарочные сертификаты</b><br>
                 <b>Цена:</b><br>
-                Одиночный прыжок - <span class="price">300</span> грн.<br>
-                Тандем прыжок - <span class="price">600</span> грн. (за двоих)<br>
-                Срок действия сертификата до 10.11.2019 г.<br>
+                Одиночный прыжок - <span class="price">{{site.payment.cert_classic.amount}}</span> грн.<br>
+                Тандем прыжок - <span class="price">{{site.payment.cert_tandem.amount}}</span> грн. (за двоих)<br>
+                Срок действия сертификата до {{site.cert_expire_date | date: "%d.%m.%Y"}} г.<br>
                 <span class="warn">Возможна отправка в любой город.</span>
             </div>
         </li>
@@ -19,8 +19,8 @@
                 *Так выглядит подарочный сертификат<br>
                 (удобная пластиковая карта)
             </div>
-            <button class="btn red">Заказать сертификат одиночный 300 грн.</button>
-            <button class="btn red">Заказать сертификат тандем 600 грн.</button>
+            <button class="btn red" data-modal="certFormModalClassic">Заказать сертификат одиночный {{site.payment.cert_classic.amount}} грн.</button>
+            <button class="btn red" data-modal="certFormModalTandem">Заказать сертификат тандем {{site.payment.cert_tandem.amount}} грн.</button>
         </li>
     </ul>
 </section>
