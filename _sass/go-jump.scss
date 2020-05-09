@@ -139,8 +139,11 @@ form {
     padding-top: .5rem;
 
     .phone {
-      color: yellow;
-      font-size: 1.2rem;
+      &, a {
+        color: yellow;
+        font-size: 1.2rem;
+        text-decoration: none;
+      }
 
       @include small {
         margin-top: 1rem;
@@ -734,8 +737,10 @@ section.gifts {
       text-align: right;
     }
 
-    .phone {
+    .phone a {
       color: white;
+      text-decoration: none;
+      font-weight: normal;
     }
   }
 }

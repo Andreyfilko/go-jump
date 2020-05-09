@@ -90,5 +90,16 @@
     {% endcapture %}
 
     {% include modal.html content=modal_cert_tandem width='28rem' id="certFormModalTandem" %}
+
+
+    <!-- Form modal_call_me -->
+    {% capture modal_call_me %}
+    {% include form_call_me.html
+    form_name="Перезвоните мне"
+    id="callMeFormModal"
+    %}
+    {% endcapture %}
+
+    {% include modal.html content=modal_call_me width='28rem' id="callMeFormModal" %}
   </body>
 </html>

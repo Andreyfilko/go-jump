@@ -8,13 +8,17 @@ function serializeToObject(form) {
 }
 
 function getFormattedMessage({user_name, phone_number, user_count, message}, form_name = 'Имя Формы') {
-    return `
+    let template = `
 <pre>${form_name}</pre>
 
 <b>Имя пользователя:</b> ${user_name || 'Не указано'}
-<b>Телефон:</b> ${phone_number}
-<b>Количество людей:</b> ${user_count}
-<b>Комментарий:</b> ${message || '-'}`;
+<b>Телефон:</b> ${phone_number}\n`;
+
+    template += typeof user_count !== 'undefined' ? `<b>Комментарий:</b> ${message || '-'}\n`: '';
+
+    template += `<b>Комментарий:</b> ${message || '-'}`;
+
+    return template;
 }
 
 function telegramSend(form, order_id) {

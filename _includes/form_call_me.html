@@ -1,0 +1,38 @@
+<form class="book" autocomplete="off" id="{{ include.id }}" name="{{ include.form_name }}">
+    <div class="title">{{ include.form_name }}</div>
+    <div class="description">*Ваши данные не будут переданы третьим лицам.</div>
+
+    <label class="row">
+        <span class="name">Фамилия Имя:</span>
+        <input name="user_name" placeholder="Ваше имя" type="text">
+    </label>
+    <label class="row">
+        <span class="name">Телефон: *</span>
+        <input name="phone_number" placeholder="0670000000" autocomplete="off" type="text">
+    </label>
+    <label class="row">
+        <span class="name">Комментарий:</span>
+        <input type="text" name="message">
+    </label>
+    <div class="row red">
+        <button type="submit" name="request" class="btn">Жду звонка</button>
+    </div>
+
+</form>
+
+<script type="text/javascript">
+$(function () {
+    const formId = '#{{ include.id }}';
+
+    $(formId).validate({
+        rules: {
+            phone_number: {
+                required: true,
+                digits: true,
+                minlength: 7
+            }
+        },
+        submitHandler: processBookForm
+    });
+})
+</script>
