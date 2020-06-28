@@ -9,11 +9,11 @@ cert_expire_date: 2020-11-10
 #Prices
 payment:
   jump_classic:
-    enabled: true
+    enabled: false
     amount: 250
     description: Бронирование классического прыжка
   jump_tandem:
-    enabled: true
+    enabled: false
     amount: 550
     description: Бронирование тандем прыжка
   cert_classic:
