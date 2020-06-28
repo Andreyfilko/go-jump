@@ -368,6 +368,7 @@ form.book {
     font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
   }
 
   .description {
@@ -420,7 +421,7 @@ form.book {
 
     input, select {
       width: 100%;
-      border: none;
+      border: 1px solid silver;
       border-radius: .3rem;
       outline: none;
       padding: .6rem .8rem;
@@ -662,12 +663,13 @@ section.gifts {
     color: black;
   }
 
-  ol {
+  .list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 2rem !important;
     justify-content: space-between;
+    list-style: none;
 
     li {
       color: black;
@@ -688,6 +690,10 @@ section.gifts {
         display: block;
         max-height: 7rem;
         margin: 0 auto 1rem;
+      }
+
+      .title {
+        text-align: center;
       }
     }
   }

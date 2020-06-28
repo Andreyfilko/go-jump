@@ -44,7 +44,7 @@ function processBookForm(form) {
         telegramSend(form).done(data => {
             if(data.ok) {
                 // show popup
-                alert('Ваша заявка приятна и будет обработана в ближайшее время.\nМы с вами свяжемся.');
+                showAlert('Ваша заявка приятна и будет обработана в ближайшее время.\nМы с вами свяжемся.');
                 form.reset();
             } else {
                 // show error
@@ -66,7 +66,7 @@ function processPayment(formData, form) {
                 if(data.ok) {
                     $(getHtmlPayForm(paymentFormData)).appendTo('body').submit();
                 } else {
-                    alert('Произошла ошибка.');
+                    showAlert('Произошла ошибка.');
                 }
             });
         }
@@ -95,6 +95,20 @@ function getHtmlPayForm(formData) {
                 <input type="hidden" name="signature" value="${formData.signature}" />
             </form>
             `;
+}
+
+function showAlert(message) {
+    if(!message) {
+        return;
+    }
+
+    // close all visible modals
+    $('.modal:visible').each((i, modal) => $(modal).hide());
+
+    const modalId = '#modal_AlertModal';
+
+    $(modalId).find('.modal-body').html(message);
+    $(modalId).show();
 }
 
 $(function () {
