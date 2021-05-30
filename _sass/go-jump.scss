@@ -7,17 +7,17 @@
 
 .container {
   margin: auto;
-  
+
   @include large {
     max-width: $large-breakpoint;
   }
-  
+
   @include medium {
     max-width: $medium-breakpoint;
   }
-  
+
   @include small {
-  
+
   }
 }
 
@@ -105,7 +105,7 @@ form {
   text-align: center;
   background-color: $dark-red;
   font-size: 1.1rem;
-  
+
   .container {
     display: flex;
     justify-content: space-around;
@@ -117,7 +117,7 @@ form {
       }
     }
   }
-  
+
   h1 {
     font-size: 2.5rem;
     line-height: 1;
@@ -126,7 +126,7 @@ form {
     margin: 0;
     padding: 0;
   }
-  
+
   h2 {
     position: relative;
     font-size: 1rem;
@@ -134,7 +134,7 @@ form {
     padding: 0;
     top: -.2rem;
   }
-  
+
   .contact {
     padding-top: .5rem;
 
@@ -150,15 +150,15 @@ form {
       }
     }
   }
-  
+
   @include large {
     padding: 1rem 0 .5rem;
   }
-  
+
   @include medium {
     padding: 3rem 4rem;
   }
-  
+
   @include small {
     padding: 2rem 0 1rem;
   }
@@ -259,7 +259,7 @@ main.countdown {
   min-height: 20rem;
   text-align: center;
   color: white;
-  
+
   h1 {
     font-size: 4rem;
     text-transform: uppercase;
@@ -271,16 +271,16 @@ main.countdown {
       font-size: 3rem;
     }
   }
-  
+
   h2 {
     font-size: 1.1rem;
     font-weight: normal;
   }
-  
+
   & > .row {
     display: flex;
     flex-wrap: wrap;
-    
+
     & > * {
       flex-grow: 1;
       width: 50%;
@@ -289,7 +289,7 @@ main.countdown {
         width: 100%;
       }
     }
-  
+
     .countdown {
       padding-top: 12.5rem;
       display: flex;
@@ -298,39 +298,39 @@ main.countdown {
       @include small {
         padding-top: 3rem;
       }
-      
+
       .title {
         font-size: 1.2rem;
         line-height: 1.1;
         font-weight: bold;
       }
-  
+
       #clock {
         width: 460px;
         transform: scale(0.7);
         margin: 1rem 0;
         align-self: center;
-  
+
         .flip-clock-label {
           top: 6.5rem;
           color: #fff;
           font-size: 1.34rem;
         }
-  
+
         .inn {
           background-color: #fff;
           color: #000;
         }
       }
-      
+
       .schedule {
         margin-top: 1rem;
-        
+
         .title {
           font-weight: bold;
           font-size: 1.8rem;
         }
-        
+
         ul.schedule {
           li {
             flex-basis: 25%;
@@ -346,9 +346,13 @@ main.countdown {
         }
       }
     }
-    form.book {
-      margin-top: 3rem;
-      padding: 1.5rem;
+    .form {
+      display: flex;
+
+      form.book {
+        margin: auto auto 1.5rem;
+        padding: 1.5rem;
+      }
     }
   }
 }
@@ -356,7 +360,6 @@ main.countdown {
 form.book {
   width: 100%;
   max-width: 27rem;
-  margin: auto;
   display: flex;
   flex-direction: column;
   color: black;
