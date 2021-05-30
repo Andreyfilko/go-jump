@@ -14,7 +14,7 @@ function getFormattedMessage({user_name, phone_number, user_count, message}, for
 <b>Имя пользователя:</b> ${user_name || 'Не указано'}
 <b>Телефон:</b> ${phone_number}\n`;
 
-    template += typeof user_count !== 'undefined' ? `<b>Комментарий:</b> ${message || '-'}\n`: '';
+    template += `<b>Количество людей:</b> ${user_count || '-'}\n`;
 
     template += `<b>Комментарий:</b> ${message || '-'}`;
 
