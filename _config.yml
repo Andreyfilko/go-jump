@@ -17,11 +17,11 @@ payment:
     amount: 550
     description: Бронирование тандем прыжка
   cert_classic:
-    enabled: true
+    enabled: false
     amount: 300
     description: Сертификат на классический прыжок
   cert_tandem:
-    enabled: true
+    enabled: false
     amount: 600
     description: Сертификат на тандем прыжок
 
