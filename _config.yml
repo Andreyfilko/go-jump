@@ -4,25 +4,25 @@ summary: Регулярно прыгаем ст.м. Почтовая - "Парк
 phone: ‎+38 (096) 388-22-08
 
 # Certificate expire date
-cert_expire_date: 2020-11-10
+cert_expire_date: 2021-11-31
 
 #Prices
 payment:
   jump_classic:
     enabled: false
-    amount: 250
+    amount: 300
     description: Бронирование классического прыжка
   jump_tandem:
     enabled: false
-    amount: 550
+    amount: 700
     description: Бронирование тандем прыжка
   cert_classic:
     enabled: false
-    amount: 300
+    amount: 350
     description: Сертификат на классический прыжок
   cert_tandem:
     enabled: false
-    amount: 600
+    amount: 750
     description: Сертификат на тандем прыжок
 
 # Telegram config
