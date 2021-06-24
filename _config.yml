@@ -26,8 +26,8 @@ payment:
     description: Сертификат на тандем прыжок
 
 # Telegram config
-telegram_chatId: 492010472
-#telegram_chatId: 353354751 # filko
+# telegram_chatId: 492010472
+telegram_chatId: 353354751 # filko
 telegram_bot_token: 983495413:AAECuNOKh00LLeaCxpzHIxzBEW0JL1upSFU
 
 show_downloads: true
