@@ -11,12 +11,12 @@ function getFormattedMessage({user_name, phone_number, user_count, message}, for
     let template = `
 <pre>${form_name}</pre>
 
-<b>Имя пользователя:</b> ${user_name || 'Не указано'}
+<b>Прізвише Ім'я:</b> ${user_name || 'Не указано'}
 <b>Телефон:</b> ${phone_number}\n`;
 
-    template += `<b>Количество людей:</b> ${user_count || '-'}\n`;
+    template += `<b>Кількість людей:</b> ${user_count || '-'}\n`;
 
-    template += `<b>Комментарий:</b> ${message || '-'}`;
+    template += `<b>Коментарій:</b> ${message || '-'}`;
 
     return template;
 }
@@ -44,7 +44,7 @@ function processBookForm(form) {
         telegramSend(form).done(data => {
             if(data.ok) {
                 // show popup
-                showAlert('Ваша заявка приятна и будет обработана в ближайшее время.\nМы с вами свяжемся.');
+                showAlert('Ваша заявка прийня та буде опрацьована в найближчій час.\nМи з вами зв'яжемося.');
                 form.reset();
             } else {
                 // show error
@@ -60,13 +60,13 @@ function processPayment(formData, form) {
 
     $.get( `https://filko.dev/go-jump/`, paymentData).done(paymentFormData => {
 
-        if(confirm(`Для безопасной оплаты вы будете переадресованы на сервис liqpay.ua\rНомер Вашего заказа: ${paymentFormData.order_id}`)) {
+        if(confirm(`Для безпечної оплати ви будете перенаправлені на сервіс liqpay.ua\rНомер Вашого замовлення: ${paymentFormData.order_id}`)) {
 
             telegramSend(form, paymentFormData.order_id).done(data => {
                 if(data.ok) {
                     $(getHtmlPayForm(paymentFormData)).appendTo('body').submit();
                 } else {
-                    showAlert('Произошла ошибка.');
+                    showAlert('Виникла помилка.');
                 }
             });
         }
