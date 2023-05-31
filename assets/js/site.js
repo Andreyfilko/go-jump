@@ -44,7 +44,7 @@ function processBookForm(form) {
         telegramSend(form).done(data => {
             if(data.ok) {
                 // show popup
-                showAlert('Ваша заявка прийня та буде опрацьована в найближчій час.\nМи з вами зв'яжемося.');
+                showAlert('Ваша заявка прийня та буде опрацьована в найближчій час.\nМи з вами зв\'яжемося.');
                 form.reset();
             } else {
                 // show error
