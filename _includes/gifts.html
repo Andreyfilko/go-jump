@@ -1,26 +1,26 @@
 <section class="gifts">
     <ul class="table">
         <li class="gift">
-            <div class="title">Нужен оригинальный подарок?</div>
+            <div class="title">Потрібний екстримальний подарунок?</div>
             <img src="assets/img/gift.png">
             <div class="description">
-                <b>В наличии есть подарочные сертификаты</b><br>
+                <b>В наявносі є подарункові сертифікати</b><br>
                 <b>Цена:</b><br>
-                Одиночный прыжок - <span class="price">{{site.payment.cert_classic.amount}}</span> грн.<br>
-                Тандем прыжок - <span class="price">{{site.payment.cert_tandem.amount}}</span> грн. (за двоих)<br>
-                Срок действия сертификата до {{site.cert_expire_date | date: "%d.%m.%Y"}} г.<br>
-                <span class="warn">Возможна отправка в любой город.</span>
+                Одиночний стрибок - <span class="price">{{site.payment.cert_classic.amount}}</span> грн.<br>
+                Тандем-стрибок - <span class="price">{{site.payment.cert_tandem.amount}}</span> грн. (за двох)<br>
+                Термін дії сертифіката до {{site.cert_expire_date | date: "%d.%m.%Y"}} г.<br>
+                <span class="warn">Відправляємо по всій Україні.</span>
             </div>
         </li>
         <li class="certificate">
-            <div class="title">- У нас есть подарочный сертификат!</div>
+            <div class="title">- В нас є подарункові сертифікати!</div>
             <img src="assets/img/certificate.png">
             <div class="hint">
-                *Так выглядит подарочный сертификат<br>
-                (удобная пластиковая карта)
+                *Так вигляжає подарунковий сертифікат<br>
+                (зручна пластикова карта)
             </div>
-            <button class="btn red" data-modal="certFormModalClassic">Заказать сертификат одиночный {{site.payment.cert_classic.amount}} грн.</button>
-            <button class="btn red" data-modal="certFormModalTandem">Заказать сертификат тандем {{site.payment.cert_tandem.amount}} грн.</button>
+            <button class="btn red" data-modal="certFormModalClassic">Замовити сертифікат одиночний {{site.payment.cert_classic.amount}} грн.</button>
+            <button class="btn red" data-modal="certFormModalTandem">Замовити сертифікат тандем {{site.payment.cert_tandem.amount}} грн.</button>
         </li>
     </ul>
 </section>
