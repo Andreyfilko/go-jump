@@ -1,13 +1,13 @@
 <form class="book" autocomplete="off" id="{{ include.id }}" name="{{ include.form_name }}">
     <div class="title">{{ include.form_name }}</div>
-    <div class="description">*Ваши данные не будут переданы третьим лицам.</div>
+    <div class="description">*Ваші дані не будуть передані третім лицям.</div>
 
     <label class="row">
-        <span class="name">Фамилия Имя:</span>
-        <input name="user_name" placeholder="Ваше имя" type="text">
+        <span class="name">Прізвище Ім'я:</span>
+        <input name="user_name" placeholder="Ваше ім'я" type="text">
     </label>
     <label class="row">
-        <span class="name">Количество человек:</span>
+        <span class="name">Кількість людей:</span>
         <select name="user_count">
             {% for i in (1..8) %}
             {% assign value = i | modulo:2 %}
@@ -22,16 +22,16 @@
         <input name="phone_number" placeholder="0123456789" autocomplete="off" type="text">
     </label>
     <label class="row">
-        <span class="name">Комментарий (дата прыжка, или детали бронировки) :</span>
+        <span class="name">Коментарій (дата стрибка, або деталі бронювання) :</span>
         <input type="text" name="message">
     </label>
     <div class="row red">
-        <button type="submit" name="request" class="btn">Оставить заявку</button>
+        <button type="submit" name="request" class="btn">Залишити заявку</button>
     </div>
 
     {% if site.payment[include.pay_type].enabled %}
     <div class="row green">
-        <button type="submit" name="pay_type" value="{{include.pay_type}}" class="btn">Оплатить онлайн</button>
+        <button type="submit" name="pay_type" value="{{include.pay_type}}" class="btn">Сплатити онлайн</button>
     </div>
     {% endif %}
 
