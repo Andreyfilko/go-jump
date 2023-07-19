@@ -18,11 +18,11 @@ payment:
     description: Бронювання тандем стрибка
   cert_classic:
     enabled: false
-    amount: 550
+    amount: 600
     description: Сертифікат на одиночний стрибок
   cert_tandem:
     enabled: false
-    amount: 1250
+    amount: 1300
     description: Сертифікат на тандем стрибок
 
 # Telegram config
@@ -35,11 +35,11 @@ google_analytics:
 theme: jekyll-theme-cayman
 
 dates:
-  - 2023-07-12
-  - 2023-07-13
-  - 2023-07-14
-  - 2021-07-15
-  - 2021-07-16
-  - 2021-07-18
-  - 2021-07-19
-  - 2021-07-20
+  - 2023-07-20
+  - 2023-07-21
+  - 2023-07-22
+  - 2021-07-23
+  - 2021-07-25
+  - 2021-07-26
+  - 2021-07-27
+  - 2021-07-28
