@@ -1,5 +1,5 @@
 ---
-layout: go-jump
+layout: rope-jumping
 ---
 
 {% include offer.html %}
