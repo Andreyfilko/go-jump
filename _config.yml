@@ -4,13 +4,13 @@ summary: Постійно стрибаємо ст.м. Поштова - "Парк
 phone: ‎+38 (096) 388-22-08
 
 # Certificate expire date
-cert_expire_date: 2024-10-13
+cert_expire_date: 2025-10-12
 
 #Prices
 payment:
   jump_classic:
     enabled: false
-    amount: 600
+    amount: 700
     description: Бронювання одиночного стрибка
   jump_tandem:
     enabled: false
@@ -18,7 +18,7 @@ payment:
     description: Бронювання тандем стрибка
   cert_classic:
     enabled: false
-    amount: 700
+    amount: 800
     description: Сертифікат на одиночний стрибок
   cert_tandem:
     enabled: false
@@ -35,11 +35,11 @@ google_analytics:
 theme: jekyll-theme-cayman
 
 dates:
-  - 2024-10-09
-  - 2024-10-10
-  - 2024-10-11
-  - 2024-10-12
-  - 2024-10-13
-  - 2024-10-18
-  - 2024-10-19
-  - 2024-10-20
+  - 2024-03-03
+  - 2024-03-04
+  - 2024-03-05
+  - 2024-03-06
+  - 2024-03-07
+  - 2024-03-08
+  - 2024-03-09
+  - 2024-03-10
