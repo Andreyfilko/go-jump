@@ -14,7 +14,7 @@ payment:
     description: Бронювання одиночного стрибка
   jump_tandem:
     enabled: false
-    amount: 1500
+    amount: 1700
     description: Бронювання тандем стрибка
   cert_classic:
     enabled: false
@@ -22,7 +22,7 @@ payment:
     description: Сертифікат на одиночний стрибок
   cert_tandem:
     enabled: false
-    amount: 1600
+    amount: 1800
     description: Сертифікат на тандем стрибок
 
 # Telegram config
