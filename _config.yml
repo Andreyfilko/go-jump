@@ -10,7 +10,7 @@ cert_expire_date: 2026-10-11
 payment:
   jump_classic:
     enabled: false
-    amount: 700
+    amount: 800
     description: Бронювання одиночного стрибка
   jump_tandem:
     enabled: false
@@ -18,7 +18,7 @@ payment:
     description: Бронювання тандем стрибка
   cert_classic:
     enabled: false
-    amount: 800
+    amount: 900
     description: Сертифікат на одиночний стрибок
   cert_tandem:
     enabled: false
@@ -35,11 +35,11 @@ google_analytics:
 theme: jekyll-theme-cayman
 
 dates:
-  - 2026-06-23
-  - 2026-06-24
-  - 2026-06-25
-  - 2026-06-26
-  - 2026-06-27
-  - 2026-06-28
-  - 2026-06-29
-  - 2026-06-30
+  - 2026-07-01
+  - 2026-07-02
+  - 2026-07-03
+  - 2026-07-04
+  - 2026-07-05
+  - 2026-07-06
+  - 2026-07-07
+  - 2026-07-08
