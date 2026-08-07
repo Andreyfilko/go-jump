@@ -28,7 +28,7 @@ payment:
 # Telegram config
 telegram_chatId: 492010472
 # telegram_chatId: 353354751 # filko
-telegram_bot_token: 8981410736:AAHpgn9ZI6FtIy2yVxmvlGfjE8qO2yS7mdQ
+telegram_bot_token: 983495413:AAERHLeCODLCsHMJOus6578t4yZyGIfv7vI
 
 show_downloads: true
 google_analytics:
